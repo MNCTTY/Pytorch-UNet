@@ -6,3 +6,5 @@ checkpoints/
 *.jpg
 SUBMISSION*
 venv/
+.DS_Store
+.ipynb_ckpts/
