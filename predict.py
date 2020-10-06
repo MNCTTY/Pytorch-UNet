@@ -46,7 +46,7 @@ def predict_img(net,
         probs = tf(probs.cpu())
         full_mask = probs.squeeze().cpu().numpy()
 
-    return full_mask > out_threshold
+    return full_mask# > out_threshold
 
 
 def get_args():

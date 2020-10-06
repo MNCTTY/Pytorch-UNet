@@ -6,66 +6,96 @@ import torch
 from torch.utils.data import Dataset
 import logging
 from PIL import Image
+import os
+
+###### unified size of imgs/masks is 400x400
 
 
 class BasicDataset(Dataset):
-    def __init__(self, imgs_dir, masks_dir, scale=1, mask_suffix=''):
-        self.imgs_dir = imgs_dir
-        self.masks_dir = masks_dir
-        self.scale = scale
-        self.mask_suffix = mask_suffix
-        assert 0 < scale <= 1, 'Scale must be between 0 and 1'
+    def __init__(self, imgs_dir):
+        folders = os.listdir(imgs_dir)
+        mask_paths = [] 
+        img_paths = []
+        for i, folder in enumerate(folders):
+            path = os.path.join(imgs_dir, folder, 'pictures')
+            ids = [splitext(file)[0] for file in os.listdir(path) if not file.startswith('.')]
+            
+            for idx in ids:
+                mask_paths.append(os.path.join(imgs_dir, folder, 'masks', str(idx)) + '.npy')
+                img_paths.append(os.path.join(imgs_dir, folder, 'pictures', str(idx)) + '.PNG')
+        
+        self.mask_paths = mask_paths
+        self.img_paths = img_paths
 
-        self.ids = [splitext(file)[0] for file in listdir(imgs_dir)
-                    if not file.startswith('.')]
-        logging.info(f'Creating dataset with {len(self.ids)} examples')
+        
+        logging.info(f'Creating dataset with {len(mask_paths)} examples')
 
     def __len__(self):
-        return len(self.ids)
+        return len(self.mask_paths)
 
     @classmethod
-    def preprocess(cls, pil_img, scale):
-        w, h = pil_img.size
-        newW, newH = int(scale * w), int(scale * h)
-        assert newW > 0 and newH > 0, 'Scale is too small'
-        pil_img = pil_img.resize((newW, newH))
-
-        img_nd = np.array(pil_img)
-
-        if len(img_nd.shape) == 2:
-            img_nd = np.expand_dims(img_nd, axis=2)
-
+    def preprocess(cls, img_or_mask, mask=False):
         # HWC to CHW
-        img_trans = img_nd.transpose((2, 0, 1))
-        if img_trans.max() > 1:
-            img_trans = img_trans / 255
+        if not mask:
+            img_or_mask = np.array(img_or_mask)
+#             print(f'image shape = {img_or_mask.shape}')
+            img_or_mask = np.expand_dims(img_or_mask, axis=2)
 
-        return img_trans
+        else:
+            img_or_mask = img_or_mask
+#         img_trans = img_nd.transpose((2, 0, 1))
+        img_or_mask = img_or_mask.transpose((2, 0, 1))
+        if img_or_mask.max() > 1:
+            img_or_mask = img_or_mask / 255
+
+        return img_or_mask
 
     def __getitem__(self, i):
-        idx = self.ids[i]
-        mask_file = glob(self.masks_dir + idx + self.mask_suffix + '.*')
-        img_file = glob(self.imgs_dir + idx + '.*')
+#         idx = self.ids[i]
+#         try:
+#             mask_file = glob(os.path.join(self.masks_dir, f'{idx}.npy'))[0]
+#             img_file = glob(os.path.join(self.imgs_dir, f'{idx}.PNG'))[0]
+#         except:
+#             print(f'{self.masks_dir}{idx}.npy')
+#             mask_file = f'{self.masks_dir}{idx}.npy'
+        mask_file = self.mask_paths[i]
+        img_file = self.img_paths[i]
 
-        assert len(mask_file) == 1, \
-            f'Either no mask or multiple masks found for the ID {idx}: {mask_file}'
-        assert len(img_file) == 1, \
-            f'Either no image or multiple images found for the ID {idx}: {img_file}'
-        mask = Image.open(mask_file[0])
-        img = Image.open(img_file[0])
+        mask = np.load(mask_file)
+        img = Image.open(img_file).convert('L')
+        
+        # create new image of desired size for padding
+        ww = 600
+        hh = 600
+        
+        wd_m, ht_m, _ = mask.shape
+        wd_im, ht_im = img.size
+        
+        # compute center offset
+        xx = (ww - wd_m) // 2
+        yy = (hh - ht_m) // 2
 
-        assert img.size == mask.size, \
-            f'Image and mask {idx} should be the same size, but are {img.size} and {mask.size}'
+        # print(f'result_mask.shape = {mask.shape}')
+        result_mask = np.pad(mask, ((xx, xx),(yy, yy), (0, 0)))
+        # print(f'result_mask.shape after padding = {result_mask.shape}')
+        
+        xx = (ww - wd_im) // 2
+        yy = (hh - ht_im) // 2
 
-        img = self.preprocess(img, self.scale)
-        mask = self.preprocess(mask, self.scale)
+        img = np.array(img)
+        # print(f'result_img.shape = {img.shape}')
+        result_img = np.pad(img, ((yy, yy),(xx, xx)))
+        # print(f'result_img.shape after padding = {result_img.shape}')
+        result_img = Image.fromarray(np.uint8(result_img))
+
+        result_img = self.preprocess(result_img)
+        
+        result_mask = self.preprocess(result_mask, mask=True)
 
         return {
-            'image': torch.from_numpy(img).type(torch.FloatTensor),
-            'mask': torch.from_numpy(mask).type(torch.FloatTensor)
+            'image': torch.from_numpy(result_img),
+            'mask': torch.from_numpy(result_mask).type(torch.long)
         }
+    
+#         return {'image': torch.from_numpy(img), 'mask': torch.from_numpy(mask)}
 
-
-class CarvanaDataset(BasicDataset):
-    def __init__(self, imgs_dir, masks_dir, scale=1):
-        super().__init__(imgs_dir, masks_dir, scale, mask_suffix='_mask')

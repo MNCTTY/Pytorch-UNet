@@ -1,0 +1,168 @@
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02236.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02236.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02238.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02238.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02237.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02237.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02254.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02254.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02239.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02239.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02245.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02245.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02236.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02236.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02244.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02244.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02262.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02262.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02258.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02258.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02233.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02233.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02243.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02243.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02254.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02254.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02240.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02240.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02242.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02242.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02241.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02241.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02222.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02222.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/01215.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/01215.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02249.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02249.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02259.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02259.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02245.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02245.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02224.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02224.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02251.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02251.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02267.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02234.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02234.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02267.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02237.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02237.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02248.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02248.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02238.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02238.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02270.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02270.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02232.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02232.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02227.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02227.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02271.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02271.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02239.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02239.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02257.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02257.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02264.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02264.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02263.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02263.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02246.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02246.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02256.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02256.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02265.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02261.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02261.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02265.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02226.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02226.PNG
+Img file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02223.PNG
+Mask file: 
+/home/karina/T2_Sag_Mid/train_data/masks/02223.PNG
